@@ -236,3 +236,56 @@ function reverseNew (str) {
 console.log(reverseNew('matthew is cool'));
 
 
+//sum of array numbers
+function isSum(array,sum){
+	var arr = array;
+
+	for(var i = 0; i < arr.length; i++){
+		for(var j = i+1; j < arr.length; j++){
+			if(arr[i] + arr[j] == sum){
+				return arr[i] + arr[j]
+			}
+		}
+	}
+
+	return false;
+
+}
+
+console.log(isSum([5,2,4,1,5,6], 6));
+
+
+//sum of array numbers
+function isSumNew(array,sum){
+	var diff = {},
+		len = array.length,
+		minusVal;
+
+		for(var i = 0; i < len; i++){
+
+			minusVal = sum - array[i];
+
+			console.log(minusVal)
+
+			if(diff[minusVal]){
+				console.log(diff);
+				return true
+			}else{				
+				diff[array[i]]=true;
+				console.log(diff);
+			}
+
+		}
+
+		console.log(diff);
+		return false;
+
+
+}
+
+console.log(isSumNew([5,2,7,1,9,6,11], 17));
+
+
+
+
+
